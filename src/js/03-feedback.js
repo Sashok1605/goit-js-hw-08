@@ -25,7 +25,6 @@ function enterSubmit(e) {
     e.preventDefault();
     getInputs = localStorage.getItem("feedback-form-state");
     localInputs = JSON.parse(getInputs);
-    console.log(getInputs);
     e.currentTarget.reset();
     localStorage.removeItem("feedback-form-state");
     }
