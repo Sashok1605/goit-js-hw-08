@@ -15,7 +15,8 @@ let getInputs = localStorage.getItem("feedback-form-state");
 if (getInputs) {
     valueInputs = JSON.parse(getInputs);
     inputEmail.value = valueInputs.email;
-    inputMassage.value = valueInputs.massage;
+    inputMassage.value = valueInputs.message;
+    console.log(inputMassage.value);
 }
 
 inputForm.addEventListener("input", throttle(enterInput, 500));
@@ -30,13 +31,20 @@ function enterInput() {
 function enterSubmit(e) {
     e.preventDefault();
     getInputs = localStorage.getItem("feedback-form-state");
+
     if(getInputs) {
     valueInputs = JSON.parse(getInputs);
     inputEmail.value = valueInputs.email;
-    inputMassage.value = valueInputs.massage;
-    }
-    console.log(valueInputs);
+    inputMassage.value = valueInputs.message;
+    };
     
     e.currentTarget.reset();
     localStorage.removeItem("feedback-form-state");
 }
+
+
+
+
+
+
+
